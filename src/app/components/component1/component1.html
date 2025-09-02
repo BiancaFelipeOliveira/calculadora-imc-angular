@@ -1,0 +1,46 @@
+<main id="conteudo_principal">
+    <div>
+        <h1>Calcule o Seu IMC</h1>
+        <label for="peso">Digite seu peso:</label>
+        <input type="number" id="input-peso" name="input-peso" [(ngModel)]="peso">
+        <br>
+        <label for="altura">Digite sua altura:</label>
+        <input type="number" id="input-altura" name="input-altura" [(ngModel)]="altura">
+        <br>
+        <button (click)="alternarElemento()">Enviar</button>
+
+        <br><br>
+        <h4 *ngIf="mostrarElemento">Resultado: {{calcularIMC(peso, altura)}}</h4>
+
+        <h2> Tabela de Classificações</h2>
+        <table>
+            <thead>
+                <td>
+                    <tr>IMC</tr>
+                </td>
+                <td>
+                    <tr>Classificação</tr>
+                </td>
+            </thead>
+            <tbody>
+                <td>
+                    <tr>Menor do que 18,5</tr>
+                    <tr>18,5 - 24,9</tr>
+                    <tr>25,0 - 29,9</tr>
+                    <tr>30,0 - 34,9</tr>
+                    <tr>35,0 - 39,9</tr>
+                    <tr>Maior ou igual a 40,0</tr>
+                </td>
+                <td>
+                    <tr>Abaixo do peso normal</tr>
+                    <tr>Peso normal</tr>
+                    <tr>Excesso de peso</tr>
+                    <tr>Obesidade classe I</tr>
+                    <tr>Obesidade classe II</tr>
+                    <tr>Obesidade classe III</tr>
+                </td>
+            </tbody>
+        </table>
+        <legend>Classificação segundo a OMS a partir do IMC</legend>
+    </div>
+</main>
